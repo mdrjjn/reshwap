@@ -641,9 +641,8 @@ $(document).ready(function(){
 							            results[i].save({
 							              success: function(object) {
 							                console.log("success");
-							                $("#FormArea").empty();
-							                $("#FormArea").text("Your form has been successfully updated. Refresh the page to view your forms");
-							              },
+															document.location.reload();
+															},
 							              error: function(model, error) {
 							                console.log("Post save with file error:"+error.message);
 							              }
@@ -658,7 +657,7 @@ $(document).ready(function(){
 							            success: function(object) {
 							              console.log("success");
 							              $("#FormArea").empty();
-							              $("#FormArea").text("Your form has been successfully updated. Refresh the page to view your forms");
+							              document.location.reload();
 							            },
 							            error: function(model, error) {
 							              console.log("failure");
