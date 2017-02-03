@@ -14,9 +14,7 @@ function DSFunction() {
 
       console.log("sticker: " + Sticker);
 
-
-
-      if(stickerInput.value.length==0){
+      if(Sticker.value.length==0){
         $("#noResultsFound").text("You did not type anything, please try again");
         //return; //kill the function if there is nothing selected.
       }
@@ -28,6 +26,7 @@ function DSFunction() {
                console.log(Sticker);
 
 //why is nothing showing up
+
 	query.find({
 
 		success: function(results) { //ADD a while i<1 loop so that forms arent generated twice.
@@ -47,7 +46,6 @@ function DSFunction() {
 
 				var ownername = results[i].get("contactEmail");
 				console.log(ownername);
-
 
 }
 

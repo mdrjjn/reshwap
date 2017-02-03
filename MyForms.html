@@ -132,7 +132,7 @@ $(document).ready(function(){
                 <li><a href="Electronics.html">Electronics</a></li>
                 <li><a href="Others.html">Other</a></li>
                 <li><a href="Upload.html">Upload</a></Li>
-									<li><a href="LF.html">Lost and Found</a></li>
+									<li><a href="lf2.html">Lost and Found</a></li>
                 <li id ="current-page"><a href="MyForms.html">My Forms</a></li>
                 <li><a href="About.html">About</a></li>
                 <li><a id="logout"><!-- <button id="logout"> -->Log Out<!-- </button> --></a></li>
@@ -641,9 +641,8 @@ $(document).ready(function(){
 							            results[i].save({
 							              success: function(object) {
 							                console.log("success");
-							                $("#FormArea").empty();
-							                $("#FormArea").text("Your form has been successfully updated. Refresh the page to view your forms");
-							              },
+															document.location.reload();
+															},
 							              error: function(model, error) {
 							                console.log("Post save with file error:"+error.message);
 							              }
@@ -658,7 +657,7 @@ $(document).ready(function(){
 							            success: function(object) {
 							              console.log("success");
 							              $("#FormArea").empty();
-							              $("#FormArea").text("Your form has been successfully updated. Refresh the page to view your forms");
+							              document.location.reload();
 							            },
 							            error: function(model, error) {
 							              console.log("failure");
