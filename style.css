@@ -84,6 +84,7 @@ button {
     padding-top: 48px;
 }
 
+
 #help_index {
     cursor: pointer;
     transition: 0.25s;
@@ -146,6 +147,7 @@ nav a {
     text-decoration: none;
     color: #E8F1F2;
     transition: 0.25s;
+    font-size: 1.2em;
 }
 
 nav a:hover {
@@ -155,8 +157,10 @@ nav a:hover {
 }
 
 nav li:nth-child(2), nav li:nth-child(3) {
-    float: right;
-    padding-bottom: 12px;
+    position: relative;
+    top: 4px;
+    left: 1%;
+    padding: 12px;
 }
 
 .navbar-nav {
@@ -200,9 +204,8 @@ body {
     flex-direction: row;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    min-height: 95vh;
 }
-
-@media 
 
 .input-description-label {
     margin-bottom: 0;
@@ -591,6 +594,7 @@ p {
     padding: 5px 50px;
     transition: 0.3s;
     box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    color: rgba(255,255,255,0.7)
 }
 
 #login-submit:hover {
@@ -666,6 +670,12 @@ p {
     margin-bottom: 30px;
 }
 
+@media (max-width:760px) { 
+    .rw-wrapper {
+        display: none;
+    }
+}
+
 .rw-wrapper {
     position: relative;
     left: -70px;
@@ -712,29 +722,29 @@ p {
 }
 
 @-webkit-keyframes jump {
-    0%   {opacity: 0; top:100px; transform:rotateX(-60deg);}
+    0%   {opacity: 0; top:100px; transform:rotateX(-90deg);}
     13%  {opacity: 1}
     20%  {opacity: 1; top:0px; transform:rotateX(0deg);}
     32%  {opacity: 0;}
-    35%  {opacity: 0; top:-100px; transform:rotateX(60deg);}
+    35%  {opacity: 0; top:-100px; transform:rotateX(90deg);}
     100% {opacity: 0;}
 }
 
 @-moz-keyframes jump {
-    0%   {opacity: 0; top:100px; transform:rotateX(-60deg);}
+    0%   {opacity: 0; top:100px; transform:rotateX(-90deg);}
     13%  {opacity: 1}
     20%  {opacity: 1; top:0px; transform:rotateX(0deg);}
     32%  {opacity: 0;}
-    35%  {opacity: 0; top:-100px; transform:rotateX(60deg);}
+    35%  {opacity: 0; top:-100px; transform:rotateX(90deg);}
     100% {opacity: 0;}
 }
 
 @keyframes jump {
-    0%   {opacity: 0; top:100px; transform:rotateX(-60deg);}
+    0%   {opacity: 0; top:100px; transform:rotateX(-90deg);}
     13%  {opacity: 1}
     20%  {opacity: 1; top:0px; transform:rotateX(0deg);}
     32%  {opacity: 0;}
-    35%  {opacity: 0; top:-100px; transform:rotateX(60deg);}
+    35%  {opacity: 0; top:-100px; transform:rotateX(90deg);}
     100% {opacity: 0;}
 }
 
@@ -744,12 +754,16 @@ p {
 
 .descriptionWrapper h2 {
     font-size: 3em;
-    font-weight: 300;
+    font-weight: 100;
 }
 
 .descriptionWrapper p {
-    font-size: 1.3em;
+    font-size: 1.7em;
+    font-weight: 100;
+    line-height: 1.4em;
     padding-bottom: 20px;
+    padding-left: 20px;
+    padding-top: 35px;
 }
 
 #post-file {
@@ -851,12 +865,45 @@ p#help {
 }
 
 footer {
-    background-color: #13293D;
+    background-color: #0D1B27;
     color: #E8F1F2;
     padding: 50px 0px;
     font-size: 1em;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+}
+
+.columnWrapper {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.secondaryColumnWrapper {
+    display: flex;
+    position: relative;
+    right: 10%;
+    padding-bottom: 30px;   
+}
+
+.column1, .column2 {
+    padding-right: 5%;
+}
+
+footer a {
+    color: #E8F1F2;
+    transition: 0.25s;
+}
+
+footer a:hover, footer a:active {
+    color: #98d2ff;
+    text-decoration: none;
+}
+
+footer h3 {
+    font-size: 1.7em;
+    font-weight: 100;
 }
 
 footer ul {
@@ -866,3 +913,4 @@ footer ul {
 footer p {
     padding-bottom: 20px;
     text-align: center;
+}
