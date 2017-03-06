@@ -1,3 +1,9 @@
+html {
+    font-family: 'Roboto';
+    font-size: 0.9em;
+    min-width: 740px;
+}
+
 input {
     width: 190px;
     margin-bottom: 5px;
@@ -19,8 +25,8 @@ button {
     background-color: rgba(225,225,225,0.5);
     border-radius: 4px;
     /*border: 5px solid white;*/
-    min-width: 210px;
-    max-width: 320px;
+    min-width: 240px;
+    max-width: 240px;
     /*min-height: 210px;*/
     position: relative;
     /*the following 3 lines for some unknown reason center everyhting PERFECTLY!*/
@@ -68,6 +74,11 @@ button {
     padding: 50px 0px;
 }
 
+.indexPageDescription {
+    display: inline;
+    white-space: nowrap;
+}
+
 #help_index {
     cursor: pointer;
 }
@@ -78,8 +89,7 @@ h4 {
 
 #extraContent {
     background-color: rgba(225,225,225,0.5);
-    min-width: 210px;
-    max-width: 320px;
+    max-width: 240px;
     position: relative;
     margin: 0 auto;
     margin-top: 15px;
@@ -99,6 +109,7 @@ h4 {
 
 nav {
     background-color: #13293D;
+    font-weight: 300;
 }
 
 .navbar {
@@ -125,7 +136,6 @@ nav ul {
 nav li {
     display: inline;
     padding: 10px;
-    font-weight: 400;
 }
 
 nav li:nth-child(2), nav li:nth-child(3) {
@@ -156,22 +166,24 @@ nav li:nth-child(2), nav li:nth-child(3) {
 }
 
 body {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#247ba0+0,006494+100 */
- 
-    background: rgb(36, 123, 160);
-     /* Old browsers */
-
-    background: -moz-linear-gradient(top, rgba(36, 123, 160, 1) 0%, rgba(0, 100, 148, 1) 100%);
-     /* FF3.6-15 */
-
-    background: -webkit-linear-gradient(top, rgba(36, 123, 160, 1) 0%, rgba(0, 100, 148, 1) 100%);
-     /* Chrome10-25,Safari5.1-6 */
-
-    background: linear-gradient(to bottom, rgba(36, 123, 160, 1) 0%, rgba(0, 100, 148, 1) 100%);
-     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: rgb(0, 100, 148);
+    background: -moz-linear-gradient(top, rgba(36, 123, 160, 1) 0%, #13293D 100%);
+    background: -webkit-linear-gradient(top, rgba(36, 123, 160, 1) 0%, #13293D 100%);
+    background: linear-gradient(to bottom, rgba(36, 123, 160, 1) 0%, #13293D 100%);
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     color: #E8F1F2;
+}
+
+.indexWrapper {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex: 0 1 auto;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .input-description-label {
@@ -563,6 +575,21 @@ p {
     border: 2px solid #01B95E;
 }
 
+#resetPassword {
+    width: 160px;
+    border-radius: 4px;
+    border: 2px solid #E8F1F2;
+    font-size: 1.2em;
+    font-weight: 300;
+    font-family: 'Roboto';
+    transition: 0.3s;
+}
+
+#resetPassword:hover {
+    color: #00872C;
+    border: 2px solid #00872C;
+}
+
 #login-name {
     font-weight: 300;
     background-color: rgba(50,50,50,0.3);
@@ -575,13 +602,85 @@ p {
 }
 
 #forgotPassword {
-    padding-top: 15px;
+    padding: 15px 0;
+}
+
+#password-reset-email {
+    background-color: rgba(50,50,50,0.3);
+    color: aliceblue;
 }
 
 #login-forget {
     font-weight: 300;
-    background-color: rgba(50,50,50,0.3);
     color: aliceblue;
+}
+
+.logoShort {
+    height: 125px;
+    display: inline;
+    margin-bottom: 30px;
+}
+
+.rw-wrapper {
+	position: relative;
+    top: 10%;
+    left: 100%;
+	margin: 0 auto;
+	font-family: 'Roboto';
+    font-weight: 300;
+	padding: 0;
+}
+
+.rw-sentence {
+	margin: 0;
+	text-align: left;
+}
+
+.rw-wrapper ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.rw-wrapper li {
+    display: inline;
+    font-size: 3.4em;
+    overflow: hidden;
+    font-weight: 300;
+    position: relative;
+    opacity: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.rw-wrapper li:nth-child(1) {
+    opacity: 1;
+    top: 0px;
+    margin-left: 0px;
+}
+
+.rw-wrapper li:nth-child(2) {
+    animation: jump 6s cubic-bezier(0.4, 0.0, 0.2, 1) infinite 0s;
+    position: absolute;
+}
+
+.rw-wrapper li:nth-child(3) {
+    animation: jump 6s cubic-bezier(0.4, 0.0, 0.2, 1) infinite 2s;
+    position: absolute;
+}
+
+.rw-wrapper li:nth-child(4) {
+    animation: jump 6s cubic-bezier(0.4, 0.0, 0.2, 1) infinite 4s;
+    position: absolute;
+}
+
+@keyframes jump {
+    0%   {opacity: 0; top:30px;}
+    10%  {opacity: 1}
+    20%  {opacity: 1; top:0px;}
+    35%  {opacity: 0; top:-30px;}
+    100% {opacity: 0;}
 }
 
 #post-file {
