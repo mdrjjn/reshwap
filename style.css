@@ -66,7 +66,6 @@ button {
 
 .indexPagecontent {
     padding: 50px 0px;
-    background: linear-gradient(180deg,#66a5ff,#0069ff);
 }
 
 #help_index {
@@ -95,7 +94,7 @@ h4 {
 }
 
 .logo {
-    height: 45px;
+    height: 40px;
 }
 
 nav {
@@ -157,7 +156,19 @@ nav li:nth-child(2), nav li:nth-child(3) {
 }
 
 body {
-    background-color: #E8F1F2;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#247ba0+0,006494+100 */
+ 
+    background: rgb(36, 123, 160);
+     /* Old browsers */
+
+    background: -moz-linear-gradient(top, rgba(36, 123, 160, 1) 0%, rgba(0, 100, 148, 1) 100%);
+     /* FF3.6-15 */
+
+    background: -webkit-linear-gradient(top, rgba(36, 123, 160, 1) 0%, rgba(0, 100, 148, 1) 100%);
+     /* Chrome10-25,Safari5.1-6 */
+
+    background: linear-gradient(to bottom, rgba(36, 123, 160, 1) 0%, rgba(0, 100, 148, 1) 100%);
+     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     color: #E8F1F2;
@@ -567,6 +578,12 @@ p {
     padding-top: 15px;
 }
 
+#login-forget {
+    font-weight: 300;
+    background-color: rgba(50,50,50,0.3);
+    color: aliceblue;
+}
+
 #post-file {
     position: absolute;
     top: 0;
@@ -663,4 +680,17 @@ p#help {
     border-radius: 3px;
     color: #781611;
     padding: 2px;
+}
+
+footer {
+    background-color: #13293D;
+    color: #E8F1F2;
+    padding-bottom: 15px;
+    font-size: 1.6em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+footer ul {
+    padding-top: 15px;
 }
