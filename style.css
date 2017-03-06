@@ -1,7 +1,6 @@
 html {
     font-family: 'Roboto';
     font-size: 0.9em;
-    min-width: 740px;
 }
 
 input {
@@ -64,6 +63,11 @@ button {
     margin-top: none;
     cursor: pointer;
     font-weight: 300;
+    transition: 0.25s;
+}
+
+#signupHeader:hover, #signupHeader:active {
+    color: #15CD72;
 }
 
 #signup {
@@ -75,12 +79,18 @@ button {
 }
 
 .indexPageDescription {
-    display: inline;
-    white-space: nowrap;
+    width: 70%;
+    text-align: center;
+    padding-top: 48px;
 }
 
 #help_index {
     cursor: pointer;
+    transition: 0.25s;
+}
+
+#help_index:hover {
+    opacity: 0.5;
 }
 
 h4 {
@@ -114,16 +124,10 @@ nav {
 
 .navbar {
     padding: 0;
-    color: #E8F1F2;
     padding-top: 10px;
     width: 80%;
     margin: 0 auto;
     padding-bottom: 10px;
-}
-
-nav h1 {
-    padding: 0;
-    color: rebeccapurple;
 }
 
 nav ul {
@@ -136,6 +140,18 @@ nav ul {
 nav li {
     display: inline;
     padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #E8F1F2;
+    transition: 0.25s;
+}
+
+nav a:hover {
+    opacity: 0.5;
+    color: white;
+    text-decoration: none;
 }
 
 nav li:nth-child(2), nav li:nth-child(3) {
@@ -186,6 +202,8 @@ body {
     flex-wrap: wrap;
 }
 
+@media 
+
 .input-description-label {
     margin-bottom: 0;
     font-size: 1.1em;
@@ -209,12 +227,18 @@ body {
 
 #question {
     font-weight: 300;
+    margin-top: -5px;
+    transition: 0.25s;
 }
 
 #answer {
     text-align: left;
     padding: 10px;
     font-size: 1.3em;
+}
+
+#question:hover, #question:active {
+    opacity: 0.5;
 }
 
 /*http://learn.shayhowe.com/html-css/building-forms/*/
@@ -594,20 +618,41 @@ p {
     font-weight: 300;
     background-color: rgba(50,50,50,0.3);
     color: aliceblue;
+    transition: 0.25s;
+}
+
+#login-name:hover, #login-name:active {
+    background-color: rgba(50,50,50,0.5);
 }
 
 #login-password {
     background-color: rgba(50,50,50,0.3);
     color: aliceblue;
+    transition: 0.25s;
+}
+
+#login-password:hover, #login-password:active {
+    background-color: rgba(50,50,50,0.5);
 }
 
 #forgotPassword {
-    padding: 15px 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    transition: 0.25s;
+}
+
+#forgotPassword:hover {
+    opacity: 0.5;
 }
 
 #password-reset-email {
     background-color: rgba(50,50,50,0.3);
     color: aliceblue;
+    transition: 0.25s;
+}
+
+#password-reset-email:hover, #password-reset-email:active {
+    background-color: rgba(50,50,50,0.5);
 }
 
 #login-forget {
@@ -622,35 +667,26 @@ p {
 }
 
 .rw-wrapper {
-	position: relative;
-    top: 10%;
-    left: 100%;
-	margin: 0 auto;
-	font-family: 'Roboto';
-    font-weight: 300;
+    position: relative;
+    left: -70px;
+    text-align: center;
+    font-family: 'Roboto';
+    font-weight: 100;
 	padding: 0;
-}
-
-.rw-sentence {
-	margin: 0;
-	text-align: left;
 }
 
 .rw-wrapper ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
 .rw-wrapper li {
     display: inline;
-    font-size: 3.4em;
-    overflow: hidden;
-    font-weight: 300;
+    font-size: 7em;
+    font-weight: 100;
     position: relative;
     opacity: 0;
-    margin-top: 10px;
     margin-left: 10px;
 }
 
@@ -675,12 +711,45 @@ p {
     position: absolute;
 }
 
-@keyframes jump {
-    0%   {opacity: 0; top:30px;}
-    10%  {opacity: 1}
-    20%  {opacity: 1; top:0px;}
-    35%  {opacity: 0; top:-30px;}
+@-webkit-keyframes jump {
+    0%   {opacity: 0; top:100px; transform:rotateX(-60deg);}
+    13%  {opacity: 1}
+    20%  {opacity: 1; top:0px; transform:rotateX(0deg);}
+    32%  {opacity: 0;}
+    35%  {opacity: 0; top:-100px; transform:rotateX(60deg);}
     100% {opacity: 0;}
+}
+
+@-moz-keyframes jump {
+    0%   {opacity: 0; top:100px; transform:rotateX(-60deg);}
+    13%  {opacity: 1}
+    20%  {opacity: 1; top:0px; transform:rotateX(0deg);}
+    32%  {opacity: 0;}
+    35%  {opacity: 0; top:-100px; transform:rotateX(60deg);}
+    100% {opacity: 0;}
+}
+
+@keyframes jump {
+    0%   {opacity: 0; top:100px; transform:rotateX(-60deg);}
+    13%  {opacity: 1}
+    20%  {opacity: 1; top:0px; transform:rotateX(0deg);}
+    32%  {opacity: 0;}
+    35%  {opacity: 0; top:-100px; transform:rotateX(60deg);}
+    100% {opacity: 0;}
+}
+
+.descriptionWrapper {
+    text-align: right;
+}
+
+.descriptionWrapper h2 {
+    font-size: 3em;
+    font-weight: 300;
+}
+
+.descriptionWrapper p {
+    font-size: 1.3em;
+    padding-bottom: 20px;
 }
 
 #post-file {
@@ -784,8 +853,8 @@ p#help {
 footer {
     background-color: #13293D;
     color: #E8F1F2;
-    padding-bottom: 15px;
-    font-size: 1.6em;
+    padding: 50px 0px;
+    font-size: 1em;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
 }
@@ -793,3 +862,7 @@ footer {
 footer ul {
     padding-top: 15px;
 }
+
+footer p {
+    padding-bottom: 20px;
+    text-align: center;
