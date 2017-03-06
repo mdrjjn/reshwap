@@ -186,10 +186,12 @@ nav li:nth-child(2), nav li:nth-child(3) {
 }
 
 body {
-    background: rgb(0, 100, 148);
-    background: -moz-linear-gradient(top, rgba(36, 123, 160, 1) 0%, #13293D 100%);
-    background: -webkit-linear-gradient(top, rgba(36, 123, 160, 1) 0%, #13293D 100%);
-    background: linear-gradient(to bottom, rgba(36, 123, 160, 1) 0%, #13293D 100%);
+    background: -moz-linear-gradient(250deg, #0650CF 0%, #0650CF 15%, #05d5ff 80%, #a6ffcb 95%, #a6ffcb 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0650CF), color-stop(15%, #0650CF), color-stop(80%, #05d5ff), color-stop(95%, #a6ffcb), color-stop(100%, #a6ffcb)); /* safari4+,chrome */
+    background: -webkit-linear-gradient(250deg, #0650CF 0%, #0650CF 15%, #05d5ff 80%, #a6ffcb 95%, #a6ffcb 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(250deg, #0650CF 0%, #0650CF 15%, #05d5ff 80%, #a6ffcb 95%, #a6ffcb 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(250deg, #0650CF 0%, #0650CF 15%, #05d5ff 80%, #a6ffcb 95%, #a6ffcb 100%); /* ie10+ */
+    background: linear-gradient(200deg, #0650CF 0%, #0650CF 15%, #05d5ff 80%, #a6ffcb 95%, #a6ffcb 100%); /* w3c */
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     color: #E8F1F2;
