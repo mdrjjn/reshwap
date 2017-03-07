@@ -22,7 +22,7 @@
     
     <!-- Pretty Google fonts -->
     
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,500" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">    
     <!-- Favicon -->
     
     <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
@@ -103,17 +103,17 @@
                 <p id="forgotPassword">Forgot/reset my password</p>
                 <div id="password-reset-fields" class="collapse">
                     
-                    <input id="password-reset-email" type="text" placeholder="Enter your email address">
+                    <input id="password-reset-email" type="text" placeholder="Enter email address">
                     
-                    <p id="reset-email-missmatch-message" style="color:#ff0000"></p>
-                    <button type="button" id="resetPassword" onclick="resetPaaword()">Send me an email</button>
+                    <p id="reset-email-missmatch-message" style="color: #c40000"></p>
+                    <button type="button" id="resetPassword" onclick="resetPaaword()">Send email</button>
                 </div>
             </form>
             <!-- REGISTER -->
             <div id="extraContent">
                 <form>
                     <label class="section-header" id="sign-me-up">
-                        <h1 id="signupHeader">Sign Me Up</h1>
+                        <h1 id="signupHeader">Sign me up</h1>
                     </label>
                     <div id="signup-fields" class="collapse">
                         <p class="input-description-label">Your Email Here:</p>
@@ -201,7 +201,7 @@
             }
             else {
                 emailConfirmed = false;
-                document.getElementById("login-email-missmatch-message").innerHTML = "wrong email following '@'";
+                document.getElementById("login-email-missmatch-message").innerHTML = "Email address not found";
                 return;
             }
             //END VALIDATING THE EMAIL
@@ -240,7 +240,7 @@
             }
             else {
                 emailConfirmed = false;
-                document.getElementById("email-missmatch-message").innerHTML = "wrong email following '@'";
+                document.getElementById("email-missmatch-message").innerHTML = "Email address not found";
                 return;
             }
             //validating password:
@@ -337,7 +337,7 @@
             }
             else {
                 emailConfirmed = false;
-                document.getElementById("reset-email-missmatch-message").innerHTML = "wrong email following '@'";
+                document.getElementById("reset-email-missmatch-message").innerHTML = "Email address not found";
                 return;
             }
             var resetEmail = $("#password-reset-email").val().toLowerCase();

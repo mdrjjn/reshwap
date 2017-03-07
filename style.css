@@ -62,7 +62,7 @@ button {
     margin-bottom: none;
     margin-top: none;
     cursor: pointer;
-    font-weight: 300;
+    font-weight: 100;
     transition: 0.25s;
 }
 
@@ -111,7 +111,7 @@ h4 {
 }
 
 .section-header {
-    font-weight: 300;
+    font-weight: 100;
 }
 
 .logo {
@@ -119,7 +119,7 @@ h4 {
 }
 
 nav {
-    background-color: #13293D;
+    background-color: #0D1B27;
     font-weight: 300;
 }
 
@@ -216,7 +216,7 @@ body {
 
 #incognito-disclaimer {
     padding: 20px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 /*this id is given to the <li> tag in the navigation on the paget to highlight the current pagr the user is on*/
@@ -589,14 +589,14 @@ p {
     border-radius: 4px;
     border: 2px solid #15CD72;
     background: #15CD72;
-    font-size: 1.2em;
-    font-weight: 500;
+    font-size: 1em;
+    font-weight: 400;
     text-transform: capitalize;
     font-family: 'Roboto';
-    padding: 5px 50px;
+    padding: 5px 55px;
     transition: 0.3s;
-    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-    color: rgba(255,255,255,0.7)
+    box-shadow: 0 2px 3px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    color: rgba(255,255,255,0.8)
 }
 
 #login-submit:hover {
@@ -608,16 +608,21 @@ p {
 #resetPassword {
     width: 160px;
     border-radius: 4px;
-    border: 2px solid #E8F1F2;
-    font-size: 1.2em;
+    border: 1px solid white;
+    color: white;
+    font-size: 1em;
     font-weight: 300;
+    padding: 5px 0px;
+    text-transform: uppercase;
     font-family: 'Roboto';
     transition: 0.3s;
 }
 
 #resetPassword:hover {
     color: #00872C;
-    border: 2px solid #00872C;
+    background: #15CD72;
+    border: 1px solid #00872C;
+    box-shadow: 0 2px 3px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
 }
 
 #login-name {
@@ -680,8 +685,8 @@ p {
 
 .rw-wrapper {
     position: relative;
-    left: -70px;
-    text-align: center;
+    left: 75px;
+    text-align: left;
     font-family: 'Roboto';
     font-weight: 100;
 	padding: 0;
@@ -751,7 +756,8 @@ p {
 }
 
 .descriptionWrapper {
-    text-align: right;
+    text-align: left;
+    margin-left: 75px;
 }
 
 .descriptionWrapper h2 {
@@ -761,10 +767,9 @@ p {
 
 .descriptionWrapper p {
     font-size: 1.7em;
-    font-weight: 100;
+    font-weight: 300;
     line-height: 1.4em;
     padding-bottom: 20px;
-    padding-left: 20px;
     padding-top: 35px;
 }
 
