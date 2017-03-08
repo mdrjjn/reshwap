@@ -84,11 +84,12 @@ button {
 }
 
 .indexPagecontent {
+    width: 40%;
     padding: 50px 0px;
 }
 
 .indexPageDescription {
-    width: 70%;
+    width: 60%;
     text-align: center;
     padding-top: 48px;
 }
