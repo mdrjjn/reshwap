@@ -365,6 +365,17 @@
             // ...
         }).then(function(){
           verifyEmail();//Calls the verify email function that is described below.
+
+        }).then(function(){
+          var db = firebase.database();
+          var ref = db.ref("users");
+
+          var entry = {
+            email: email,
+            emailVerified: false
+          }
+          ref.push(entry);
+          console.log("fofo");
         });
 
     }
@@ -394,8 +405,12 @@
             var errorMessage = error.message;
             // ...
         });
-        console.log("Successfully signed in");
-
+        //console.log("Successfully signed in");
+        if (console.log(firebase.auth().currentUser).emailVerified === true) {
+          //if the data is true, then log the person onto the next page,
+          //AND change the status of his user profile in the database to reflect this.
+          //if not, then log him out and display a sorry message. 
+        }
         move();
 
     }
