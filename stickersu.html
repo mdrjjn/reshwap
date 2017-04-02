@@ -19,10 +19,10 @@
         <!-- <input type="text" id="item" value="" style="display: block;"> -->
         <button type="button" name="button" onclick="saveStickers()">done</button>
     </form>
-    <div id="">
+    <!-- <div id="">
         <p>Most recent entry:</p>
         <p id="results"></p>
-    </div>
+    </div> -->
 </body>
 
 <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
@@ -68,11 +68,11 @@ console.log(s.val());
 
     var d = firebase.database().ref('/stickers');
 
-    var d = firebase.database().ref('stickers');
-    d.orderByKey().limitToLast(1).on('child_added', function(s) {
-        // console.log(s.val());
-        document.getElementById("results").innerHTML = "Email: " + s.val().email + " Id: " + s.val().id;
-    });
+    // var d = firebase.database().ref('stickers');
+    // d.orderByKey().limitToLast(1).on('child_added', function(s) {
+    //     // console.log(s.val());
+    //     document.getElementById("results").innerHTML = "Email: " + s.val().email + " Id: " + s.val().id;
+    // });
 </script>
 
 </html>

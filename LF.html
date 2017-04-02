@@ -7,6 +7,7 @@
   <script src="Bootstrap/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="parse-v1.6.14.js"></script>
   <script type="text/javascript" src="typeahead.js"></script>
+  <script type="text/javascript" src="foundSticker.js"></script>
 
   <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
   <link  rel="stylesheet" type="text/css" href="style.css"><!-- ALWAYS HAVE MY STYLESHEET APPEAR AFTER THE BOTSTRAP CSS SO TO OVERRIDE IT! -->
@@ -75,12 +76,6 @@
       </nav>
     </header>
 
-    <div id="myStickers" class="insideFilterDiv">
-    <center>
-    <div class="test" style="display:inline"><p>1234</p><p>item</p><p>Mark as lost</p></div>
-    </center>
-    </div>
-
 <b1 class= "tittle"><b><center>Report a Found Item to the eLost and Found</center></b></b1>
 
 <div id="reportStickers" class="insideFilterDiv">
@@ -90,7 +85,7 @@
 </div>
 <br>
 <div class="insideFilterDiv">
-  <center><button class="outsideForm" onclick="DSFunction()">Report</button></center>
+  <center><button class="outsideForm" id="reportButton" onclick="foundSticker()">Report</button></center>
   <button type="button" name="button" onclick="logOut()">logout</button>
 </div>
 
@@ -110,12 +105,14 @@
 </script>
 
 <script type="text/javascript">
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     console.log(user.email+" is logged in");
   } else {
     // No user is signed in.
 	console.log("not logged in");
+  window.location.href = './index.html';
   }
 });
 
@@ -129,6 +126,8 @@ function logOut(){
     console.log("logout failed");
   });
 }
+
+
 </script>
 
 </body>
