@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>The HTML5 Herald</title>
+    <style media="screen">
+
+    </style>
+</head>
+
+<body>
+
+    <form action="" style="margin: 10px;border-color: red;border-style: solid;border-width: 5px;">
+        <p>Email</p>
+        <input type="text" id="email" value="" style="display: block;" autofocus>
+        <p>Sticker Id</p>
+        <input type="text" id="sId" value="" style="display: block;">
+        <!-- <input type="text" id="item" value="" style="display: block;"> -->
+        <button type="button" name="button" onclick="saveStickers()">done</button>
+    </form>
+    <!-- <div id="">
+        <p>Most recent entry:</p>
+        <p id="results"></p>
+    </div> -->
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBjC0LvxiL8Epg-YO5ohd2ZBb_CdbkI8h4",
+        authDomain: "reshwaptest.firebaseapp.com",
+        databaseURL: "https://reshwaptest.firebaseio.com",
+        storageBucket: "reshwaptest.appspot.com",
+        messagingSenderId: "1083636691406"
+    };
+    firebase.initializeApp(config);
+</script>
+<!-- var d = firebase.database().ref('/results/2');
+d.on('value',function(s){
+console.log(s.val());
+var v = s.val();
+});  GETTING DATA -->
+
+<!-- var d = firebase.database().ref('results');
+d.orderByChild('subject').equalTo('English').on('child_added',function(s){
+console.log(s.val());
+}); Querrying the data -->
+<script>
+    function saveStickers() {
+        var db = firebase.database();
+        var ref = db.ref("stickers");
+
+        var entry = {
+            email: document.getElementById("email").value.concat("@lawrenceville.org"),
+            id: document.getElementById("sId").value,
+            createdAt: firebase.database.ServerValue.TIMESTAMP
+        }
+
+        ref.push(entry);
+        reloadd();
+
+    }
+    function reloadd(){
+        location.reload();
+    }
+
+    var d = firebase.database().ref('/stickers');
+
+    // var d = firebase.database().ref('stickers');
+    // d.orderByKey().limitToLast(1).on('child_added', function(s) {
+    //     // console.log(s.val());
+    //     document.getElementById("results").innerHTML = "Email: " + s.val().email + " Id: " + s.val().id;
+    // });
+</script>
+
+</html>
