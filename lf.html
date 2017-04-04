@@ -3,7 +3,7 @@
 <head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
+
     <!-- THIS LINE IS WHAT MAKES THE WEBSITE LOOK GOOD ON ALL SCREENS - i.e. RESPONSIVE!! -->
 
     <script type="text/javascript" src="jquery/jquery-1.12.0.min.js"></script>
@@ -16,19 +16,18 @@
 
     <link rel="stylesheet" type="text/css" href="styleLF.css">
     <link rel="stylesheet" type="text/css" href="utility.css">
-  
+
     <style type="text/css">
     @media only screen and (max-width: 500px) {
-      
+
 
     }
     </style>
     <script type="text/javascript">
     $(document).ready(function(){
-    $("#help").click(function(){
-
-  }
-  </style>
+      $("#help").click(function(){});
+    });
+  </script>
   <script type="text/javascript">
   $(document).ready(function(){
    $("#help").click(function(){
@@ -79,26 +78,27 @@
         </header-->
 
 <header>
-    <h1>Lost and found</h1>    
+    <h1>Lost and found</h1>
 </header>
-    
+
 <body>
     <div class="height-container">
         <h6>Get started by adding a sticker number. The owner of the sticker will receive an email.</h6>
-    
+
         <div id="reportStickers" class="insideFilterDiv">
             <center>
-                <input class="typeahead_Course outsideForm genericButton" type="number" placeholder="Sticker number" id="stickerInput"> 
+                <input class="typeahead_Course outsideForm genericButton" type="number" placeholder="Sticker number" id="stickerInput">
+                <button class="outsideForm" id="reportButton" onclick="foundSticker()">Report</button>
             </center>
         </div>
     </div>
-    
+
     <!--div class="insideFilterDiv">
       <center><button class="outsideForm" id="reportButton" onclick="foundSticker()">Report</button></center>
       <button type="button" name="button" onclick="logOut()">logout</button>
     </div-->
     <p id="noResultsFound"></p>
-    
+
     <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
     <script>
         // Initialize Firebase
@@ -112,7 +112,7 @@
         firebase.initializeApp(config);
     </script>
 </body>
-    
+
 <footer>
     <div class="columnWrapper">
         <div class="secondaryColumnWrapper">
@@ -179,5 +179,3 @@ function logOut(){
   });
 }
 </script>
-
-
