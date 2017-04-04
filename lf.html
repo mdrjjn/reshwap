@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <!-- THIS LINE IS WHAT MAKES THE WEBSITE LOOK GOOD ON ALL SCREENS - i.e. RESPONSIVE!! -->
@@ -18,20 +19,20 @@
   
     <style type="text/css">
     @media only screen and (max-width: 500px) {
-     .insideFilterDiv {
-         display: block;
-         margin-top: 15px;
-     }
-     .insideFilterDiv button {
-     position: relative;
-     left: 50%;
-     transform: translateX(-50%);
-     }
+      
+
     }
     </style>
     <script type="text/javascript">
     $(document).ready(function(){
     $("#help").click(function(){
+
+  }
+  </style>
+  <script type="text/javascript">
+  $(document).ready(function(){
+   $("#help").click(function(){
+
      var h = $("#help").html();
      //console.log(h);
      if (h == "Help"){
@@ -40,6 +41,7 @@
      else {
        $("#help").text("Help");
      }
+
     });
     });
     </script>
@@ -140,3 +142,42 @@
     </div>
 </footer>
 </html>
+
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBjC0LvxiL8Epg-YO5ohd2ZBb_CdbkI8h4",
+        authDomain: "reshwaptest.firebaseapp.com",
+        databaseURL: "https://reshwaptest.firebaseio.com",
+        storageBucket: "reshwaptest.appspot.com",
+        messagingSenderId: "1083636691406"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script type="text/javascript">
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    console.log(user.email+" is logged in");
+  } else {
+    // No user is signed in.
+	console.log("not logged in");
+  window.location.href = './index.html';
+  }
+});
+
+function logOut(){
+
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    window.location.href = './index.html';
+  }, function(error) {
+    // An error happened.
+    console.log("logout failed");
+  });
+}
+</script>
+
+
