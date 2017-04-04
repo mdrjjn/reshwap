@@ -1,0 +1,18 @@
+html {
+    font-family: 'Roboto';
+    background-color: lightgray;
+}
+
+body {
+    background-color: lightgray;
+}
+
+header {
+    background-color: lightgray;
+}
+
+.tittle {
+    color: white;
+    background-color: lightgray;
+}
+
