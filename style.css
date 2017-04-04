@@ -1,6 +1,6 @@
 html {
     font-family: 'Roboto';
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 input {
@@ -129,7 +129,6 @@ h4 {
 }
 
 nav {
-    background-color: #7F0000;
     font-weight: 300;
 }
 
@@ -166,11 +165,16 @@ nav a:hover {
     text-decoration: none;
 }
 
-nav li:nth-child(2), nav li:nth-child(3) {
+nav li:nth-child(2), nav li:nth-child(3), nav li:nth-child(4), nav li:nth-child(5) {
     position: relative;
-    top: 4px;
+    top: 10px;
     left: 1%;
     padding: 12px;
+}
+
+nav li:nth-child(3) {
+    margin-right: -25px;
+    font-size: 1.3em;
 }
 
 a {
@@ -625,11 +629,13 @@ p {
 }
 
 .genericButton {
+    font-family: 'Roboto';
     font-weight: 300;
     background-color: rgba(50,50,50,0.3);
     color: aliceblue;
     transition: 0.25s;
     width: 190px;
+    font-size: 1em;
 }
 
 .genericButton:hover, .genericButton:active {
@@ -827,14 +833,6 @@ select {
     transform: translateX(-50%);
     display: table;
     /*background-color:  pink;*/
-}
-
-.insideFilterDivs {}
-
-.insideFilterDiv {
-    /*border: 2px solid blue;
-    margin: 5px;*/
-    display: inline;
 }
 
 .uploadFormButton {
