@@ -1,0 +1,155 @@
+input, button, submit {
+    border: none;
+}
+
+input {
+    width: 190px;
+    margin-bottom: 5px;
+    border-radius: 0px;
+    border: none;
+    height: 20px;
+    color: #781611;
+    padding: 15px;
+}
+
+button {
+    background-color: transparent;
+    color: #F4F1ED;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: rgba(235, 235, 235, 0.7);
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: rgba(235, 235, 235, 0.7);
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: rgba(235, 235, 235, 0.7);
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: rgba(235, 235, 235, 0.7);
+}
+
+.buttonStyle {
+    position: relative;
+    width: 150px;
+    height: 20px;
+    text-align: center;
+    background-color: transparent;
+    color: #fff;
+    font: bold 14px arial;
+    padding-top: 1px;
+    margin: 5px auto;
+    cursor: pointer;
+}
+
+.formButton {
+    background-color: #781611;
+    border-radius: 8px;
+    margin-right: 3px;
+}
+
+.genericBlueButton {
+    border-radius: 0px;
+    border: 2px solid #2196F3;
+    background: #2196F3;
+    width: 190px;
+    font-size: 1em;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    padding: 5px 55px;
+    transition: 0.3s;
+    box-shadow: 0 2px 3px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    color: rgba(255,255,255,0.95)
+}
+
+.genericBlueButton:hover {
+    background: linear-gradient(to right, rgb(3, 137, 255), rgb(13, 211, 255));
+    color: rgba(235,235,235,0.5);
+    border: 2px solid rgb(13, 211, 255);
+}
+
+.genericButton {
+    font-family: 'Roboto';
+    font-weight: 300;
+    background-color: rgba(50,50,50,0.6);
+    color: aliceblue;
+    transition: 0.25s;
+    width: 190px;
+    font-size: 0.9em;
+}
+
+.genericButton:hover, .genericButton:active {
+    background-color: rgba(50,50,50,0.5);
+}
+
+.typeahead_Course {
+    width: 180px;
+}
+
+.height-container {
+    min-height: 65vh;
+}
+
+footer {
+    background-color: #13181b;
+    color: #E8F1F2;
+    padding: 50px 0px;
+    font-size: 0.9em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.columnWrapper {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.secondaryColumnWrapper {
+    display: flex;
+    position: relative;
+    right: 10%;
+    padding-bottom: 30px;   
+}
+
+.column1, .column2 {
+    padding-right: 5%;
+}
+
+footer a {
+    color: #E8F1F2;
+    transition: 0.25s;
+}
+
+footer a:hover, footer a:active {
+    color: #98d2ff;
+    text-decoration: none;
+}
+
+footer h3 {
+    font-size: 1.7em;
+    font-weight: 100;
+}
+
+footer ul {
+    padding-top: 15px;
+}
+
+footer p {
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 1em;
+}

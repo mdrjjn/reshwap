@@ -1,6 +1,6 @@
 html {
     font-family: 'Roboto';
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 input {
@@ -625,11 +625,13 @@ p {
 }
 
 .genericButton {
+    font-family: 'Roboto';
     font-weight: 300;
     background-color: rgba(50,50,50,0.3);
     color: aliceblue;
     transition: 0.25s;
     width: 190px;
+    font-size: 1em;
 }
 
 .genericButton:hover, .genericButton:active {
@@ -827,14 +829,6 @@ select {
     transform: translateX(-50%);
     display: table;
     /*background-color:  pink;*/
-}
-
-.insideFilterDivs {}
-
-.insideFilterDiv {
-    /*border: 2px solid blue;
-    margin: 5px;*/
-    display: inline;
 }
 
 .uploadFormButton {
