@@ -11,6 +11,7 @@ input {
     height: 20px;
     color: #781611;
     padding: 15px;
+    box-sizing: content-box;
 }
 
 button {
@@ -677,7 +678,7 @@ p {
     margin-bottom: 30px;
 }
 
-@media (max-width:760px) { 
+@media (max-width:760px) {
     .rw-wrapper {
         display: none;
     }
@@ -823,7 +824,7 @@ select {
 
 .outsideForm {
     /*this is a class for any selects, buttons, text inputs that are located outside the form.*/
- 
+
 }
 
 .filter {
@@ -881,7 +882,7 @@ footer {
     display: flex;
     position: relative;
     right: 10%;
-    padding-bottom: 30px;   
+    padding-bottom: 30px;
 }
 
 .column1, .column2 {
