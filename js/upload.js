@@ -18,6 +18,7 @@ function run(){
       };
 
       ref.push(entry);
+      document.location.reload();
 
     console.log(entry);
 
