@@ -1,8 +1,10 @@
 function run(){
 
   //grab user
-  var ref = firebase.database();
+  var db = firebase.database();
   var email = firebase.auth().currentUser.uid;
+
+  var ref = db.ref("forms");
 
   //makes sure all fields needed are there
 
@@ -14,6 +16,8 @@ function run(){
         title: $("#title").val(),
         describe: $("#describe").val()
       };
+
+      ref.push(entry);
 
     console.log(entry);
 
