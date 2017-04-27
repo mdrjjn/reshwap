@@ -17,12 +17,10 @@ function run(){
         describe: $("#describe").val()
       };
 
-      ref.push(entry);
-      document.location.reload();
-
+      //post entry
+    ref.push(entry);
     console.log(entry);
-
-  //post entry
+    document.location.reload();
 
 
 }
