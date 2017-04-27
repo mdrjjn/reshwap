@@ -1,8 +1,8 @@
 function run(){
 
   //grab user
-  var ref = new Firebase('https://reshwaptest.firebaseio.com');
-  var email = ref.getAuth().password.email;
+  var ref = firebase.database();
+  var email = firebase.auth().currentUser.uid;
 
   //makes sure all fields needed are there
 
