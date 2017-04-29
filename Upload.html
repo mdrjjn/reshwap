@@ -86,8 +86,8 @@ function loadImage(src){
 
 
 //The rendering of the image function.
-var MAX_HEIGHT = 100;//if you change height of the picture also change height of the canvas and the div!!!
-var MAX_WIDTH = 180;
+var MAX_HEIGHT = 250;//if you change height of the picture also change height of the canvas and the div!!!
+var MAX_WIDTH = 150;
 function render(src){
   var image = new Image();
   image.onload = function(){
@@ -312,148 +312,65 @@ function uploadForm(){
           document.getElementById("title-invalid-message").innerHTML = "Please enter a title";
           return;
         }
-        //checking for a price:
-        // if ($("#Price").val() !== "") {
-        //   var fieldConfirmed = true;
-        //   console.log("price entered");
-        //   $("#price-invalid-message").empty();
-        // }
-        // else {
-        //   var fieldConfirmed = false;
-        //   document.getElementById("price-invalid-message").innerHTML = "Please enter a price";
-        //   return;
-        // }
-            // validateForm();
-            // function givePermission(){
-            //   permissionToUpload = true;
-            // }
-
-      // if (permissionToUpload == true) {
-      //   //keep running
-      // } else {
-      //   console.log("permission denied");
-      //   return;
-      // }
 
 
-        var Books = Parse.Object.extend("Books");
-        var newBook = new Books();
+        //Beginning to save the form
+        //a reference object for the form class in the database
+        var formRef = firebase.database().ref("forms");
+        var newForm={
+          title:document.getElementById("Title").value,
+          description: document.getElementById("Description").value,
+          courseName : "not mentioned",
+          subject : "not specified",
+          contactEmail: firebase.auth().currentUser.email,
+          downloadurl: false
+        };
 
-        var title = document.getElementById("Title").value;
-        //var price = document.getElementById("Price").value;
-        var description = document.getElementById("Description").value;//.value.split(";");
-        // for (var i = 0; i < description.length; i++) {
-        //   description[i] = description[i].trim().toLowerCase();
-        // }
-        var courseName = document.getElementById("ChooseSubject").value;//Change in the future to Course
-        var subject = document.getElementById("SelectSubject").value;
-        var user = Parse.User.current();
-        userContact = user.get("username");
-
-        console.log("title: "+title);
-        //console.log("price: "+price);
-        console.log("Category: "+Category);
-        console.log("description: "+description);
-
-        newBook.set("category", cat);
-        newBook.set("title", title);
-        //newBook.set("price", price);
-        newBook.set("description", description);
-        if (cat == "Books") {
-          newBook.set("courseName", courseName);
-          newBook.set("subject", subject);
+        if (cat == "Books") {//only if the category is books at the momment of the upload
+          newForm.courseName=document.getElementById("ChooseSubject").value;
+          newForm.subject=document.getElementById("SelectSubject").value;
         }
-        newBook.set("user", user);
-        newBook.set("contactEmail", userContact);
 
-
-          var fileElement = $("#post-file")[0];
-          if (fileElement.files.length > 0 && filePresent == true) {
+        //uploading the image
+        if (filePresent===true){
+          // Create a root reference
+          var name = $("#post-file").val().split("\\").pop();
+          //a new reference object specifically for the image storage
+          var imageRef = firebase.storage().ref().child('images/'+name);
           var dataURL = document.getElementById("myCanvas").toDataURL("image/png");
-          var name = "image.png";
-          var base64 = dataURL.split('base64,')[1]; //http://stackoverflow.com/questions/26024135/converting-datauri-to-file-to-use-in-parse-javascript
-          var newFile = new Parse.File(name, { base64: base64 });
-          // var newFile = new Parse.File(fileName, file);
-          newFile.save({
-            success: function(){
-              //
-            }, error: function(file, error){
-              //
-            }
-          }).then(function(theFile){
-            newBook.set("file", theFile);
-            newBook.save({
-              success: function(object) {
-                console.log("success");
-                $("#FormArea").empty();
-                $("#FormArea").text("Your form has been successfully uploaded. Refresh the page to upload another one.");
-              },
-              error: function(model, error) {
-                console.log("Post save with file error:"+error.message);
-              }
-            });
-          });
-        }  else {
-          console.log("no file uploaded");
 
-          newBook.save({
-            success: function(object) {
-              console.log("success");
-              $("#FormArea").empty();
-              $("#FormArea").text("Your form has been successfully uploaded. Refresh the page to upload another one.");
-            },
-            error: function(model, error) {
-              console.log("failure");
-            }
+          imageRef.putString(dataURL, 'data_url').then(function(snapshot) {
+
+            var downloadUrl = snapshot.downloadURL;
+            var db = firebase.database();
+            var reffer = db.ref("imageMetadata");
+            var postData={
+              downloadurl: downloadUrl
+            };
+            newForm.downloadurl=downloadUrl;
+            reffer.push(postData);
+
+            console.log('Uploaded a base64url string!');
+          }).then(function(){
+
+            //pushing the entire form
+            formRef.push(newForm);
+
           });
+        } else {
+
+            //pushing the entire form
+            formRef.push(newForm);
+
         }
+
+
+
 }
   </script>
 
   <script type="text/javascript">//FUNCTIONS DEALING WITH  LOG OUT. and checking the confirmation of the email.
-  Parse.initialize("5Mt93UzpajJ9GdFOswxOvfGFuKzYILLERKPjlSaR", "YqQXgTXdkxON3cfQDquL9L8A783YyZd2Ahuhvz2K");
 
-  var user = Parse.User.current();
-  if (Parse.User.current()){
-    var emailVerified = Parse.User.current().get("emailVerified");
-      console.log("state:" + emailVerified);
-  }
-
-    $(document).ready(function checkLogin() { //Checking if logged in and if not deleting everything!
-
-        if (Parse.User.current() && emailVerified == true) {
-          console.log("logged in " +Parse.User.current().get("username"));
-          $("#current-user").html("Hey, "+Parse.User.current().get("username"));
-        } else {
-          $("#current-user").html("Not Logged in");
-          // $("body").empty(); THIS would flush everyhting in the body tag
-          window.location.href = "index.html";
-        }
-
-      });
-
-    $("#logout").click(function(event) {
-      Parse.User.logOut({success: function(){//DOES NOT WORK FOR SOME REASON
-        console.log("Logout Success");
-
-        }, error: function(){
-          console.log("Logout error :"+error.message);
-
-        }
-      });
-      checkLogin();
-    });
-    function checkLogin() { //Checking if logged in and if not deleting everything!
-        if (Parse.User.current() && emailVerified == true) {
-          console.log("logged in " +Parse.User.current().get("username"));
-          $("#current-user").html("User: "+Parse.User.current().get("username"));
-        } else {
-          $("#current-user").html("Not Logged in");
-          // $("body").empty(); THIS would flush everyhting in the body tag
-          window.location.href = "index.html";
-        }
-
-      }
 
   </script>
 
