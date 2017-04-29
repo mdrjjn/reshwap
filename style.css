@@ -14,6 +14,10 @@ input {
     box-sizing: content-box;
 }
 
+.box{
+  background-color: #ffffff;
+}
+
 button {
     background-color: transparent;
     color: #F4F1ED;

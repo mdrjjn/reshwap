@@ -74,9 +74,6 @@ function removeFile(){
         $("#removeDiv").empty();
       }
 
-
-
-
   var entry ={
         user: email,
         category: $("#category").val(),
@@ -86,6 +83,7 @@ function removeFile(){
 
       //post entry
     ref.push(entry);
+    console.log(entry);
     alert("thanks mate");
     document.location.reload();
 
