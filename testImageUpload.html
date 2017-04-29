@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+    <script src= "https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+</head>
+<body>
+  <script>
+
+
+  filePresent = false;// used in the save function to check if the file exists. Is set to false by the removeFile() function.
+        function editPic() {
+        $("#removeDiv").empty();
+        var fileElement = $("#post-file")[0];
+        var filePath = $("#post-file").val();
+        var fileName = filePath.split("\\").pop();
+        console.log("location 1")
+        if (fileElement.files.length > 0) {
+          var file = fileElement.files[0];
+          console.log(file);
+          loadImage(file);
+        }
+      }
+
+      //loadImage FUNCTION BEGINS HERE
+function loadImage(src){
+  //  Prevent any non-image file type from being read.
+  if(!src.type.match(/image.*/)){
+    console.log("The dropped file is not an image: ", src.type);
+    return;
+  }
+
+  //  Create our FileReader and run the results through the render function.
+  var reader = new FileReader();
+  reader.onload = function(e){
+    render(e.target.result);
+  };
+  reader.readAsDataURL(src);
+}
+
+
+//The rendering of the image function.
+var MAX_HEIGHT = 250;//if you change height of the picture also change height of the canvas and the div!!!
+var MAX_WIDTH = 150;
+function render(src){
+  var image = new Image();
+  image.onload = function(){
+    var canvas = document.getElementById("myCanvas");
+    if(image.height > image.width || image.height > MAX_HEIGHT ) { //"||" means or
+      image.width *= MAX_HEIGHT / image.height;
+      image.height = MAX_HEIGHT;
+    }
+    if (image.width > MAX_WIDTH){//
+      // image.height *= MAX_HEIGHT / image.width;
+      image.width = MAX_HEIGHT;
+    }
+    var ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    canvas.width = image.width;
+    canvas.height = image.height;
+    ctx.drawImage(image, 0, 0, image.width, image.height);
+  };
+  image.src = src;
+  filePresent = true;
+  // removeButton();//call on the removeButton function to create it.
+}
+
+function removeFile(){
+        document.getElementById("myCanvas").getContext("2d").clearRect(0, 0, document.getElementById("myCanvas").width, document.getElementById("myCanvas").height);//this weird thing would clear the canvas content
+        filePresent = false; //shows that the file has been removed.
+        $("#removeDiv").empty();
+      }
+  </script>
+
+
+<!-- THE UPLOAD FORM -->
+
+          <fieldset  class="field-bg uploadpicture col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+              <div id="removeDiv"></div>
+              <div class="buttonStyle">Upload Picture
+              <input class="button" id="post-file" type="file" onchange="editPic();">
+              </div>
+              <div id="canvasContainer" height="100px" width="100px" >
+              <canvas id="myCanvas" width="100px"></canvas><!-- if you change height of the picture also change height of the canvas and the div!!! -->
+              </div>
+
+          </fieldset>
+    <button class="outsideForm uploadFormButton" onclick="upload()">Submit</button>
+
+ <script type="text/javascript">
+ var config = {
+         apiKey: "AIzaSyBjC0LvxiL8Epg-YO5ohd2ZBb_CdbkI8h4",
+         authDomain: "reshwaptest.firebaseapp.com",
+         databaseURL: "https://reshwaptest.firebaseio.com",
+         storageBucket: "reshwaptest.appspot.com",
+         messagingSenderId: "1083636691406"
+     };
+   firebase.initializeApp(config);
+
+  function upload(){
+
+    // Create a root reference
+    var name = $("#post-file").val().split("\\").pop();
+    var ref = firebase.storage().ref().child('images/'+name);
+    var dataURL = document.getElementById("myCanvas").toDataURL("image/png");
+
+    ref.putString(dataURL, 'data_url').then(function(snapshot) {
+
+      var downloadUrl = snapshot.downloadURL;
+      var db = firebase.database();
+      var reffer = db.ref("imageMetadata");
+      var postData={
+        downloadurl: downloadUrl
+      };
+      reffer.push(postData);
+
+      console.log('Uploaded a base64url string!');
+    });
+
+  }
+
+ </script>
+
+</body>
+
+</html>
