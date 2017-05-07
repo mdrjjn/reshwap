@@ -35,14 +35,13 @@
     <meta name="theme-color" content="#006494">
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            $("#help_index").click(function () {
+        $(document).ready(function() {
+            $("#help_index").click(function() {
                 var h = $("#help_index").html();
                 //console.log(h);
                 if (h == "More questions") {
                     $("#help_index").text("email reshwap@lawrenceville.org");
-                }
-                else {
+                } else {
                     $("#help_index").text("More questions");
                 }
             });
@@ -52,10 +51,17 @@
     <!-- Google Analytics -->
 
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-93107403-1', 'auto');
         ga('send', 'pageview');
@@ -66,8 +72,9 @@
     <ul class="navbar">
         <li><img class="logo" src="Reshwap%20Logo.png"></li>
         <li><a>About</a></li>
-        <li>//<li>
-        <li><a>Contribute</a></li>
+        <li>//
+            <li>
+                <li><a>Contribute</a></li>
     </ul>
 </nav>
 
@@ -161,142 +168,33 @@
     </div>
 
     <script type="text/javascript">
-        //LOG OUT
-        // $("#logout").click(function(event) {
-        // 	Parse.Promise.logOut({success: function(){//DOES NOT WORK FOR SOME REASON
-        // 		console.log("Logout Success");
-        //
-        // 		}, error: function(){
-        // 			console.log("Logout error :"+error.message);
-        //
-        // 		}
-        // 	});
-        // 	checkLogin();
-        // });
-        //LOG IN
-        // $("#login").submit(function (event) {
-        //     event.preventDefault();
-        //     var name = $("#login-name").val().toLowerCase();
-        //     var pass = $("#login-password").val();
-        //     var application = { //create the object that will pass to cloud code
-        //         email: name
-        //         , pass: pass
-        //     };
-        //     //console.log(application.email, application.pass);
-        //     //validating email:
-        //     var emailAddressArray = name.split("@");
-        //     var emailHost = emailAddressArray[1].toLowerCase();
-        //     // console.log(emailHost);
-        //     if (emailHost == "lawrenceville.org") {
-        //         var emailConfirmed = true;
-        //         $("#login-email-missmatch-message").empty();
-        //     }
-        //     else {
-        //         emailConfirmed = false;
-        //         document.getElementById("login-email-missmatch-message").innerHTML = "Email address not found";
-        //         return;
-        //     }
-        //     //END VALIDATING THE EMAIL
-        //     // Parse.Cloud.run('confirmLogin', {cloud: 'help'}).then(function() {
-        //     //   console.log("holy @@@@ works!");
-        //     // }, function(err) {console.log("err", err);} );
-        //     $("#login-submit").hide(); //这是中文。我觉得中文很有意思。夜里。。。
-        //     // HELLO Function
-        //
-        //     //if any1 is wondering why such a clumsy nested function: https://parse.com/docs/cloudcode/guide#webapp-users
-        // });
-        //SIGNING UP
-        // $("#signup").submit(function (event) {
-        //     event.preventDefault();
-        //     //validating email:
-        //     var emailAddressArray = $("#signup-name").val().toLowerCase().split("@");
-        //     var emailHost = emailAddressArray[1];
-        //     // console.log(emailHost);
-        //     if (emailHost === "lawrenceville.org") {
-        //         var emailConfirmed = true;
-        //         $("#email-missmatch-message").empty();
-        //     }
-        //     else {
-        //         emailConfirmed = false;
-        //         document.getElementById("email-missmatch-message").innerHTML = "Email address not found";
-        //         return;
-        //     }
-        //     //validating password:
-        //     if ($("#signup-password").val() == $("#confirm-password").val()) {
-        //         var passwordConfirmed = true;
-        //         console.log("passwords match");
-        //         $("#password-missmatch-message").empty();
-        //     }
-        //     else {
-        //         var passwordConfirmed = false;
-        //         document.getElementById("password-missmatch-message").innerHTML = "passwords do not match";
-        //         return;
-        //     }
-        //     if (emailConfirmed == true && passwordConfirmed == true) {
-        //         var name = $("#signup-name").val().toLowerCase();
-        //         var pass = $("#signup-password").val();
-        //         var application = { //create the object that will pass to cloud code
-        //             email: name
-        //             , pass: pass
-        //         };
-        //         Parse.Cloud.run('validateSignUp', application).then(function (result) {
-        //             console.log(result);
-        //             //notify that the signup has been successful
-        //             $("#signup-fields").empty();
-        //             document.getElementById("signup-fields").innerHTML = "CHECK YOUR EMAIL BEFORE SIGNNING IN";
-        //         }, function (error) {
-        //             console.log("err", error + "looks like you are doing something shady;)");
-        //         });
-        //     }
-        // });
-        //Check If logged in when refreshed
-        // $(document).ready(function checkLogin() {
-        //     if (Parse.User.current()) {
-        //         console.log("logged in " + Parse.User.current().get("username"));
-        //         $("#current-user").html("Welcome " + Parse.User.current().get("username"));
-        //         window.location.href = "About.html";
-        //     }
-        //     else {
-        //         $("#current-user").html("Not Logged in");
-        //     }
-        // });
-        //Check if logged in
-        // function checkLogin() {
-        //     if (Parse.User.current()) {
-        //         console.log("logged in " + Parse.User.current().get("username"));
-        //         $("#current-user").html("Welcome " + Parse.User.current().get("username"));
-        //     }
-        //     else {
-        //         $("#current-user").html("Not Logged in");
-        //     }
-        // }
     </script>
     <script type="text/javascript">
         //bootstrap related code that is responsible for hiding and unhiding sign up elements
-        $(window).on('load', function () {
+        $(window).on('load', function() {
             $("#signup-fields").collapse('hide');
         })
-        $(document).ready(function () {
-            $("#signupHeader").click(function () {
+        $(document).ready(function() {
+            $("#signupHeader").click(function() {
                 console.log("click");
                 $("#signup-fields").collapse('toggle');
             });
         });
         //
-        $(window).on('load', function () {
+        $(window).on('load', function() {
             $("#password-reset-fields").collapse('hide');
         })
-        $(document).ready(function () {
-            $("#forgotPassword").click(function () {
+        $(document).ready(function() {
+            $("#forgotPassword").click(function() {
                 $("#password-reset-fields").collapse('toggle');
             });
         });
         // The question field
-        $(window).on('load', function () {
+        $(window).on('load', function() {
             $("#answer").collapse('hide');
         })
-        $(document).ready(function () {
-            $("#question").click(function () {
+        $(document).ready(function() {
+            $("#question").click(function() {
                 console.log("click");
                 $("#answer").collapse('toggle');
             });
@@ -312,20 +210,19 @@
             if (emailHost == "lawrenceville.org") {
                 var emailConfirmed = true;
                 $("#reset-email-missmatch-message").empty();
-            }
-            else {
+            } else {
                 emailConfirmed = false;
                 document.getElementById("reset-email-missmatch-message").innerHTML = "Email address not found";
                 return;
             }
             var resetEmail = $("#password-reset-email").val().toLowerCase();
             Parse.User.requestPasswordReset(resetEmail, {
-                success: function () {
+                success: function() {
                     // Password reset request was sent successfully
                     document.getElementById("password-reset-fields").innerHTML = "Check Your email...again ;)";
                     console.log("email sent");
-                }
-                , error: function (error) {
+                },
+                error: function(error) {
                     // Show the error message somewhere
                     alert("Error: " + error.code + " " + error.message);
                 }
@@ -333,7 +230,7 @@
         }
     </script>
 </body>
- <!-- Linking Firebase -->
+<!-- Linking Firebase -->
 <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
 <!-- Initializing firebase -->
 <script>
@@ -360,40 +257,40 @@
             var errorCode = error.code;
             var errorMessage = error.message;
             // ...
-        }).then(function(){
-          verifyEmail();//Calls the verify email function that is described below.
+        }).then(function() {
+            verifyEmail(); //Calls the verify email function that is described below.
 
-        }).then(function(){//this creates a new user entry with all of their data
-          var db = firebase.database();
-          var ref = db.ref("users");
+        }).then(function() { //this creates a new user entry with all of their data
+            var db = firebase.database();
+            var ref = db.ref("users");
 
-          var entry = {
-            email: email,
-            uid:firebase.auth().currentUser.uid,
-            emailVerified: false
-          }
-          ref.push(entry);
-          console.log("fofo");
+            var entry = {
+                email: email,
+                uid: firebase.auth().currentUser.uid,
+                emailVerified: false
+            }
+            ref.push(entry);
+            console.log("fofo");
         });
 
     }
 
     function verifyEmail() {
-      var user = firebase.auth().currentUser;
+        var user = firebase.auth().currentUser;
 
-      user.sendEmailVerification().then(function() {
-        // Email sent.
-        alert("Congratulations! You have been accepted... jk. Check your email to confirm your account and proceed to using the website");
-      }, function(error) {
-        // An error happened.
-        alert(error);
-      });
+        user.sendEmailVerification().then(function() {
+            // Email sent.
+            alert("Congratulations! You have been accepted... jk. Check your email to confirm your account and proceed to using the website");
+        }, function(error) {
+            // An error happened.
+            alert(error);
+        });
 
     }
 
     function signIn() {
-      event.preventDefault();
-      console.log("hebgr");
+        event.preventDefault();
+        console.log("hebgr");
         var email = document.getElementById("login-name").value.concat("@lawrenceville.org");
         var pass = document.getElementById("login-password").value;
 
@@ -403,9 +300,9 @@
             var errorMessage = error.message;
             console.log(errorMessage);
             // ...
-        }).then(function(){
-          //console.log("logged in successful... verifying email");
-          checkEmailVer();
+        }).then(function() {
+            //console.log("logged in successful... verifying email");
+            checkEmailVer();
         })
 
 
@@ -413,31 +310,31 @@
     }
 
     //the function checks wether the email is verified or not.
-    function checkEmailVer(){
-      if (firebase.auth().currentUser.emailVerified === true) {
+    function checkEmailVer() {
+        if (firebase.auth().currentUser.emailVerified === true) {
 
-        move();
+            move();
 
-      } else {
-        alert("Looks like you have not yet verified your email");
-      }
+        } else {
+            alert("Looks like you have not yet verified your email");
+        }
 
     }
 
 
-    function move(){
-      //Important to move pages in the following if statement as it will make sure the
-      //authentication is not in a transition state.
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-          if (firebase.auth().currentUser.emailVerified === true){
-            window.location.href = './lf.html';//Redirects to the lf page
-          }
-        } else {
-          // No user is signed in.
-        }
-      });
+    function move() {
+        //Important to move pages in the following if statement as it will make sure the
+        //authentication is not in a transition state.
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                // User is signed in.
+                if (firebase.auth().currentUser.emailVerified === true) {
+                    window.location.href = './lf.html'; //Redirects to the lf page
+                }
+            } else {
+                // No user is signed in.
+            }
+        });
 
     }
 
@@ -471,7 +368,8 @@
 
         <p>Reshwap was made by Max Drojjin '17, Matthew Gunton '18, and Eric Cheng '18, for students to make campus-wide transactions easier and safer.</p>
 
-        <p>Reshwap 2016-</p>
+        <p>Reshwap 2017-</p>
     </div>
 </footer>
+
 </html>

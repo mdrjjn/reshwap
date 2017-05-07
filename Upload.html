@@ -237,8 +237,6 @@ function removeFile(){
 <!-- For now I keep the upload button outside. Might be a better idea to put it into a label. -->
 
 <script type="text/javascript"> //Parse UPLOAD SCRIPT
-   Parse.initialize("5Mt93UzpajJ9GdFOswxOvfGFuKzYILLERKPjlSaR", "YqQXgTXdkxON3cfQDquL9L8A783YyZd2Ahuhvz2K");
-
 
     function defineCat(){
       cat = document.getElementById("Category").value;
@@ -318,6 +316,7 @@ function uploadForm(){
         //a reference object for the form class in the database
         var formRef = firebase.database().ref("forms");
         var newForm={
+          category:document.getElementById("Category").value,
           title:document.getElementById("Title").value,
           description: document.getElementById("Description").value,
           courseName : "not mentioned",
@@ -355,12 +354,14 @@ function uploadForm(){
 
             //pushing the entire form
             formRef.push(newForm);
+            $("form").html("Your form has been successfully uploaded! refresh the page to add a new one))");
 
           });
         } else {
 
             //pushing the entire form
             formRef.push(newForm);
+            $("form").html("Your form has been successfully uploaded! refresh the page to add a new one))");
 
         }
 
