@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Index</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- THIS LINE IS WHAT MAKES THE WEBSITE LOOK GOOD ON ALL SCREENS - i.e. RESPONSIVE!! -->
+
+    <script type="text/javascript" src="jquery/jquery-1.12.0.min.js"></script>
+
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script> -->
+
+    <link rel="stylesheet" type="text/css" href="safety.css">
+    <link rel="stylesheet" type="text/css" href="utility.css">
+
+    <!-- Pretty Google fonts -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400" rel="stylesheet">
+
+    <!-- Favicon -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="favicons/manifest.json">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <meta name="msapplication-config" content="favicons/browserconfig.xml">
+    <meta name="theme-color" content="#006494">
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#help_index").click(function () {
+                var h = $("#help_index").html();
+                //console.log(h);
+                if (h == "More questions") {
+                    $("#help_index").text("email reshwap@lawrenceville.org");
+                }
+                else {
+                    $("#help_index").text("More questions");
+                }
+            });
+        });
+    </script>
+
+    <!-- Google Analytics -->
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-93107403-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+    
+<header>
+    <h1>Security</h1>    
+</header>
+    
+<body>
+    <div class="height-container">
+        <h6>Your information is well protected.</h6>
+
+        <p>We utilize blunted-edge technologies to ensure your personal information is relatively safe. The files themselves are hosted on bluehost.com and the database runs from parse.com. The latter is also where all the security features are implemented. Parse was aquired by Facebook, so it is pretty relaible. Even I can not see your password. In additition to that access is restricted by ACL's and CLP's.</p>
+
+        <p><i>However, it is entirely possible that I messed something up and there is a way to circumvent security. In fact, there probably is. The nature of the data we store is not very sensitive, however, so there is no need for concern.</i></p>
+    </div>
+</body>
+    
+<footer>
+    <div class="columnWrapper">
+        <div class="secondaryColumnWrapper">
+            <div class="column1">
+                <h3>Reference</h3>
+                <ul>
+                    <li><a>How to use Reshwap</a></li>
+                    <li><a>About Reshwap</a></li>
+                    <li><a>Troubleshooting</a></li>
+                </ul>
+            </div>
+
+            <div class="column2">
+                <h3>Contribute</h3>
+                <ul>
+                    <li><a>Github page</a></li>
+                    <li><a>Contact us on Github</a></li>
+                    <li><a>Suggest an improvement</a></li>
+                    <li><a>Report a bug</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Reshwap was made by Max Drojjin '17, Matthew Gunton '18, and Eric Cheng '18, for students to make campus-wide transactions easier and safer.</p>
+
+        <p>Reshwap 2016-</p>
+    </div>
+</footer>
+</html>
