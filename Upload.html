@@ -322,7 +322,8 @@ function uploadForm(){
           courseName : "not mentioned",
           subject : "not specified",
           contactEmail: firebase.auth().currentUser.email,
-          downloadurl: false
+          downloadurl: false,
+          imgName: "absent"
         };
 
         if (cat == "Books") {//only if the category is books at the momment of the upload
@@ -333,7 +334,8 @@ function uploadForm(){
         //uploading the image
         if (filePresent===true){
           // Create a root reference
-          var name = $("#post-file").val().split("\\").pop();
+          name = $("#post-file").val().split("\\").pop();
+          newForm.imgName = name;
           //a new reference object specifically for the image storage
           var imageRef = firebase.storage().ref().child('images/'+name);
           var dataURL = document.getElementById("myCanvas").toDataURL("image/png");
@@ -344,7 +346,8 @@ function uploadForm(){
             var db = firebase.database();
             var reffer = db.ref("imageMetadata");
             var postData={
-              downloadurl: downloadUrl
+              downloadurl: downloadUrl,
+              imgName: name
             };
             newForm.downloadurl=downloadUrl;
             reffer.push(postData);

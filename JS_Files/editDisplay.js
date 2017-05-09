@@ -1,17 +1,6 @@
 
-$(document).ready(function(){
-  var config = {
-          apiKey: "AIzaSyBjC0LvxiL8Epg-YO5ohd2ZBb_CdbkI8h4",
-          authDomain: "reshwaptest.firebaseapp.com",
-          databaseURL: "https://reshwaptest.firebaseio.com",
-          storageBucket: "reshwaptest.appspot.com",
-          messagingSenderId: "1083636691406"
-      };
-    firebase.initializeApp(config);
-});
-
-function findAndDisplay(category){
-
+function editDisplay(email){
+  
   $("#FormArea").empty(); //Clear anything that would be inside the FormArea div.
 	$("#noResultsFound").empty();
 	var divRow = document.createElement("DIV");
