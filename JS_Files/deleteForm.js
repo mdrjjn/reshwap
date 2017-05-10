@@ -1,3 +1,4 @@
+//A function that is called form the MyForms page and is used to delete a selected form
 function deleteForm (id){
   console.log(id);
   // taken from here: http://stackoverflow.com/questions/40474865/firebase-how-to-query-by-key

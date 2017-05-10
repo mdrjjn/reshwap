@@ -28,7 +28,8 @@ fileChanged = false;//this is out of place but it works: used in updateForm();
 	function editPic() {
 
     //Here I am creating a canvas which will replace the image if someone decides to re-upload an image.
-	 	$("#image-canvas-div").empty();
+
+
 	 	var changeImgCanv = document.createElement("CANVAS");
 		changeImgCanv.id = "myCanvas";
 		document.getElementById("image-canvas-div").appendChild(changeImgCanv);

@@ -11,6 +11,18 @@
 <script type="text/javascript" src="parse-v1.6.14.js"></script>
 <script type="text/javascript" src="typeahead.js"></script>
 
+<script src= "https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+<script type="text/javascript">
+var config = {
+				apiKey: "AIzaSyBjC0LvxiL8Epg-YO5ohd2ZBb_CdbkI8h4",
+				authDomain: "reshwaptest.firebaseapp.com",
+				databaseURL: "https://reshwaptest.firebaseio.com",
+				storageBucket: "reshwaptest.appspot.com",
+				messagingSenderId: "1083636691406"
+		};
+	firebase.initializeApp(config);
+</script>
+<script type = "text/javascript" src= "JS_Files/displayCategories.js"></script>
 
 <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
 <link  rel="stylesheet" type="text/css" href="style.css"><!-- ALWAYS HAVE MY STYLESHEET APPEAR AFTER THE BOTSTRAP CSS SO TO OVERRIDE IT! -->
@@ -68,7 +80,7 @@ $(document).ready(function(){
 
 <script type="text/javascript">//start the displaying of the forms through a function
 	$(document).ready(function callTheuploadFormsFunction() { //Checking if logged in and if not deleting everything!
-	      uploadForms ();
+	      findAndDisplay("Other");
 
 	  });
 </script>
@@ -77,15 +89,6 @@ $(document).ready(function(){
 	<!-- <div class="row row-centered" id="row-centered">
 	</div> -->
 </div>
-
-
-<script type="text/javascript" src="JS_Files/getPrintdisplayForms.js"></script> <!-- the functions that searches and prints out all of the forms. -->
-
-
-<!-- COURSE SUGGESTION FORM BEGINS -->
-<script type="text/javascript" src="JS_Files/TypeaheadAutocomplete.js"></script> <!-- TYPEAHEAD HERE -->
-<script type="text/javascript" src="JS_Files/Security.js"></script> <!-- functions checking log in and email verification are here. -->
-
 
 
 </body>
