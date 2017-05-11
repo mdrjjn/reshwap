@@ -30,7 +30,7 @@ function findAndDisplay(category) { //mf stands for my forms. Is a boolean
         printTheForm(title, description, id, ownername, downUrl);
       } else if (course != "" && course === snap.val().courseName) {
         printTheForm(title, description, id, ownername, downUrl);
-      } else if (subject === "Choose Subject" && course === "") {
+      } else if (subject === "Select Subject" && course === "") {
         printTheForm(title, description, id, ownername, downUrl);
       }
     } else {
