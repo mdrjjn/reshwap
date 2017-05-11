@@ -9,7 +9,20 @@
 <script src="Bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="parse-v1.6.14.js"></script>
 <script type="text/javascript" src="typeahead.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
 
+<script>
+
+//connect to firebase
+var config = {
+        apiKey: "AIzaSyBjC0LvxiL8Epg-YO5ohd2ZBb_CdbkI8h4",
+        authDomain: "reshwaptest.firebaseapp.com",
+        databaseURL: "https://reshwaptest.firebaseio.com",
+        storageBucket: "reshwaptest.appspot.com",
+        messagingSenderId: "1083636691406"
+    };
+    firebase.initializeApp(config);
+</script>
 
 <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
 <link  rel="stylesheet" type="text/css" href="style.css"><!-- ALWAYS HAVE MY STYLESHEET APPEAR AFTER THE BOTSTRAP CSS SO TO OVERRIDE IT! -->
