@@ -131,7 +131,7 @@
                 <li class="nav-item"><a href="Upload.html">Upload</a></li>
                 <li class="nav-item"><a href="MyForms.html">My Forms</a></li>
                 <li class="nav-item"><a href="About.html">About</a></li>
-                <li class="nav-item"><a id="logout" style="background-color:darkgrey; padding: 10px; border-radius: 2px; color: lightgray;">Log Out</a></li>
+                <li class="nav-item"><a id="logout" onclick ="logOut()" style="background-color:darkgrey; padding: 10px; border-radius: 2px; color: lightgray;">Log Out</a></li>
             </ul>
         </nav>
 
@@ -211,7 +211,16 @@
 <!-- For now I keep the upload button outside. Might be a better idea to put it into a label. -->
 
 <script type="text/javascript"> //Parse UPLOAD SCRIPT
+    function logOut(){
 
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    window.location.href = './index.html';
+  }, function(error) {
+    // An error happened.
+    console.log("logout failed");
+  });
+}
     function defineCat(){
       cat = document.getElementById("Category").value;
       console.log("category: "+cat);
