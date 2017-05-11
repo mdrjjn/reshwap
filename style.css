@@ -1,7 +1,6 @@
 html {
     font-family: 'Roboto';
     font-size: 1em;
-    min-width: 970px;
 }
 
 input {
@@ -215,7 +214,7 @@ a:hover {
     font-size: 22px;
 }
 
-.indexBackground {
+body {
     background: rgb(112,3,0); /* Old browsers */
     background: -moz-linear-gradient(45deg, rgba(112,3,0,1) 0%, rgba(244,67,54,1) 65%, rgba(229,179,0,1) 99%); /* FF3.6-15 */
     background: -webkit-linear-gradient(45deg, rgba(112,3,0,1) 0%,rgba(244,67,54,1) 65%,rgba(229,179,0,1) 99%); /* Chrome10-25,Safari5.1-6 */
@@ -792,7 +791,7 @@ select {
     height: 29px;
     width: 180px;
     background-color: transparent;
-    color: black;
+    color: #fff;
     border: 2px solid;
 }
 
@@ -835,7 +834,7 @@ select {
 .filter {
     /*border: 2px black solid;*/
     position: relative;
-    margin: 0 auto;
+    left: 50%;
     transform: translateX(-50%);
     display: table;
     /*background-color:  pink;*/
