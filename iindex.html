@@ -278,17 +278,7 @@ $("#signup").submit(function(event){
 
 });
 
-//Check If logged in when refreshed
-$(document).ready(function checkLogin() {
-	if (Parse.User.current()) {
-		console.log("logged in " +Parse.User.current().get("username"));
-		$("#current-user").html("Welcome "+Parse.User.current().get("username"));
-		window.location.href = "About.html";
-	} else {
-		$("#current-user").html("Not Logged in");
-	}
-
-});
+//Check If logged in when refreshe
 //Check if logged in
 function checkLogin() {
 	if (Parse.User.current()) {
