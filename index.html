@@ -216,17 +216,19 @@
                 return;
             }
             var resetEmail = $("#password-reset-email").val().toLowerCase();
-            Parse.User.requestPasswordReset(resetEmail, {
-                success: function() {
-                    // Password reset request was sent successfully
-                    document.getElementById("password-reset-fields").innerHTML = "Check Your email...again ;)";
-                    console.log("email sent");
-                },
-                error: function(error) {
-                    // Show the error message somewhere
-                    alert("Error: " + error.code + " " + error.message);
-                }
-            });
+            try {
+              firebase.auth().sendPasswordResetEmail(resetEmail);
+            }
+            catch (err) {
+              alert(err);
+              if (err){
+                return;  
+              }
+            }
+
+            document.getElementById("password-reset-fields").innerHTML = "Check Your email...again ;)";
+            console.log("email sent");
+
         }
     </script>
 </body>
@@ -329,7 +331,7 @@
             if (user) {
                 // User is signed in.
                 if (firebase.auth().currentUser.emailVerified === true) {
-                    window.location.href = './lf.html'; //Redirects to the lf page
+                    window.location.href = './About.html'; //Redirects to the lf page
                 }
             } else {
                 // No user is signed in.

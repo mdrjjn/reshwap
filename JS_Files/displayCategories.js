@@ -10,7 +10,7 @@ function findAndDisplay(category) { //mf stands for my forms. Is a boolean
   var ref = firebase.database().ref("forms");
   if (category === "Books") {
     var subject = document.getElementById("ChSubject").value;
-    var course = document.getElementById("ChooseSubject").value;
+    var course = ""//document.getElementById("ChooseSubject").value;
   }
 
   ref.orderByChild('category').equalTo(category).on("child_added", function(snap) {
@@ -30,7 +30,7 @@ function findAndDisplay(category) { //mf stands for my forms. Is a boolean
         printTheForm(title, description, id, ownername, downUrl);
       } else if (course != "" && course === snap.val().courseName) {
         printTheForm(title, description, id, ownername, downUrl);
-      } else if (subject === "Choose Subject" && course === "") {
+      } else if (subject === "Select Subject" && course === "") {
         printTheForm(title, description, id, ownername, downUrl);
       }
     } else {
