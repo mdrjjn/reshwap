@@ -10,7 +10,7 @@ function findAndDisplay(category) { //mf stands for my forms. Is a boolean
   var ref = firebase.database().ref("forms");
   if (category === "Books") {
     var subject = document.getElementById("ChSubject").value;
-    var course = document.getElementById("ChooseSubject").value;
+    var course = ""//document.getElementById("ChooseSubject").value;
   }
 
   ref.orderByChild('category').equalTo(category).on("child_added", function(snap) {
