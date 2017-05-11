@@ -1,3 +1,62 @@
+body {
+    font-size: 1em;
+    min-width: 1487px;
+  
+}
+
+.logo {
+    height: 40px;
+}
+
+header {
+    width: 100%;
+}
+
+nav {
+    font-weight: 300;
+}
+
+.nav-item {
+    position: relative;
+    top: -8px;
+}
+
+.navbar {
+    padding: 0;
+    padding-top: 10px;
+    width: 60.5%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+    overflow: hidden;
+}
+
+nav li {
+    display: inline;
+    padding: 10px;
+    padding-right: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: dimgray;
+    transition: 0.15s;
+    font-size: 1.1em;
+}
+
+nav a:hover {
+    opacity: 0.5;
+    color: darkgray;
+    text-decoration: none;
+}
+
 input, button, submit {
     border: none;
 }
@@ -45,8 +104,7 @@ button {
     height: 20px;
     text-align: center;
     background-color: transparent;
-    color: #fff;
-    font: bold 14px arial;
+    color: black;
     padding-top: 1px;
     margin: 5px auto;
     cursor: pointer;
@@ -63,7 +121,7 @@ button {
     border: 2px solid #2196F3;
     background: #2196F3;
     width: 190px;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 400;
     text-transform: capitalize;
     font-family: 'Roboto';
@@ -84,6 +142,7 @@ button {
     font-family: 'Roboto';
     font-weight: 300;
     background-color: rgba(50,50,50,0.6);
+    border-radius: 3px;
     color: aliceblue;
     transition: 0.25s;
     width: 190px;
@@ -94,12 +153,47 @@ button {
     background-color: rgba(50,50,50,0.5);
 }
 
+.genericButtonEnlarged {
+    height: 50px;
+    width: 191px;
+    padding-left: 10px;
+}
+
 .typeahead_Course {
     width: 180px;
 }
 
 .height-container {
     min-height: 65vh;
+}
+
+.filter {
+    /*border: 2px black solid;*/
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 25px;
+    display: table;
+    /*background-color:  pink;*/
+}
+
+select {
+    height: 29px;
+    width: 180px;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid;
+}
+
+.FormAreas {
+    /*border: 2px solid black;*/
+
+}
+
+.FormArea {
+    /*border: 2px solid black;*/
+    width: 60%;
+    margin: 0 auto;
 }
 
 footer {
