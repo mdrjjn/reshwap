@@ -1,0 +1,28 @@
+p {
+    font-family: 'Roboto';
+    font-weight: 300;
+    text-align: center;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.container p {
+    position: relative;
+    left: -50%;
+    text-align: center;
+}
+
+.imgcontainer {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+}
+
+img {
+    position: relative;
+    left: -50%;
+}
