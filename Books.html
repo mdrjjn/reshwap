@@ -22,6 +22,8 @@ var config = {
 </script>
 <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
 <link  rel="stylesheet" type="text/css" href="style.css"><!-- ALWAYS HAVE MY STYLESHEET APPEAR AFTER THE BOTSTRAP CSS SO TO OVERRIDE IT! -->
+<link  rel="stylesheet" type="text/css" href="utility.css">
+<link  rel="stylesheet" type="text/css" href="CSS/nav.css">
 
 <style type="text/css">
 @media only screen and (max-width: 500px) {
@@ -58,7 +60,7 @@ $(document).ready(function(){
 <header>
     <nav class="navbar navbar-default">
       <div id="current-user"></div>
-        <div class="container">
+        <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -69,23 +71,26 @@ $(document).ready(function(){
             </button>
           </div>
 
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                <li id ="current-page"><a href="Books.html">Books</a></li>
-                <li><a href="Furniture.html">Furniture</a></li>
-                <li><a href="Electronics.html">Electronics</a></li>
-                <li><a href="Others.html">Other</a></li>
-                <li><a href="Upload.html">Upload</a></Li>
-                  <li><a href="lf2.html">Lost and Found</a></li>
-                <li><a href="MyForms.html">My Forms</a></li>
-                <li><a href="About.html">About</a></li>
-                <li><a id="logout"><button id="logout" onclick="logOut()" name="button">Log Out</button></a></li>
+          <!-- Collect the nav links, forms, and other content for toggling navbar-nav -->
+          <div class="collapse navbar-collapse center" id="bs-example-navbar-collapse-1">
+              <ul class="list-inline center-block text-center">
+                <li class="genericButton"><a href="Books.html">Books</a></li>
+                <li class="genericButton"><a href="Furniture.html">Furniture</a></li>
+                <li class="genericButton"><a href="Electronics.html">Electronics</a></li>
+                <li class="genericButton"><a href="Others.html">Other</a></li>
+                <li class="genericButton"><a href="Upload.html">Upload</a></Li>
+                <!-- <li><a href="lf2.html">Lost and Found</a></li> -->
+                <li class="genericButton"><a href="MyForms.html">My Forms</a></li>
+                <li class="genericButton"><a href="About.html">About</a></li>
+                <li class="genericButton"><a id="logout" onclick="logOut()">Log Out</a></li>
                </ul>
-          </div><!-- /.navbar-collapse
-        </div><!-- /.container-fluid -->
-        <p id="help">Help</p>
+          </div>
+        </div>
+
+        <!-- <p id="help">Help</p> -->
     </nav>
+
+
   </header>
 
 <nav class="filter "id="filter">
