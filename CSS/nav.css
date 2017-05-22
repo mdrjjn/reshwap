@@ -1,4 +1,29 @@
-.center {
-	display: table;   /* Allow the centering to work */
-	margin: 0 auto;
+nav h1 {
+  margin-left: 10%;
+  color: black;
+}
+
+.navbar-default {
+    background-color: lightgray;
+}
+
+nav h1, p {
+  display: inline;
+}
+
+p#help {
+    cursor: pointer;
+    display: inline;
+    border-radius: 3px;
+    color: black;
+    padding: 2px;
+    background-color: transparent;
+}
+
+.nav>li {
+    font-size: 19px;
+}
+
+.navbar-brand>img {
+    height: 40px;
 }

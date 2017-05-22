@@ -53,9 +53,19 @@ button {
 }
 
 .formButton {
-    background-color: #781611;
-    border-radius: 8px;
-    margin-right: 3px;
+  border-radius: 0px;
+  border: 2px solid #2196F3;
+  background: #2196F3;
+  width: 190px;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-family: 'Roboto';
+  text-transform: uppercase;
+  /* padding: 5px 55px; */
+  transition: 0.3s;
+  box-shadow: 0 2px 3px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  color: rgba(255,255,255,0.95);
 }
 
 .genericBlueButton {
@@ -86,7 +96,7 @@ button {
     background-color: rgba(50,50,50,0.6);
     color: aliceblue;
     transition: 0.25s;
-    width: 190px;
+    width: max;
     font-size: 0.9em;
 }
 

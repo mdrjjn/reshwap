@@ -9,7 +9,6 @@
 
     <script type="text/javascript" src="jquery/jquery-1.12.0.min.js"></script>
     <script src="Bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="parse-v1.6.14.js"></script>
     <script type="text/javascript" src="typeahead.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
@@ -28,6 +27,8 @@
 
     <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link  rel="stylesheet" type="text/css" href="utility.css">
+    <link  rel="stylesheet" type="text/css" href="CSS/nav.css">
     <!-- ALWAYS HAVE MY STYLESHEET APPEAR AFTER THE BOTSTRAP CSS SO TO OVERRIDE IT! -->
     <script type="text/javascript">
         $(document).ready(function() {
@@ -59,14 +60,18 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+                    <a class="navbar-brand" href="#">
+                      <img alt="Brand" src="Reshwap%20Logo.png">
+                    </a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav list-inline center-block text-center">
+                        <!-- <li><img class="logo" src="Reshwap%20Logo.png"></li> -->
                         <li><a href="Books.html">Books</a>
                         </li>
-                        <li id="current-page"><a href="Furniture.html">Furniture</a>
+                        <li><a href="Furniture.html">Furniture</a>
                         </li>
                         <li><a href="Electronics.html">Electronics</a>
                         </li>
@@ -87,7 +92,9 @@
                 <!-- /.navbar-collapse -->
             </div>
             <!-- /.container-fluid -->
-            <p id="help">Help</p>
+
+              <p id="help">Help</p>  <h1>Furniture</h1>
+
         </nav>
     </header>
 

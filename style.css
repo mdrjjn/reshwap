@@ -215,10 +215,7 @@ a:hover {
 }*/
 
 body {
-    background: rgb(112,3,0); /* Old browsers */
-    background: -moz-linear-gradient(45deg, rgba(112,3,0,1) 0%, rgba(244,67,54,1) 65%, rgba(229,179,0,1) 99%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg, rgba(112,3,0,1) 0%,rgba(244,67,54,1) 65%,rgba(229,179,0,1) 99%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg, rgba(112,3,0,1) 0%,rgba(244,67,54,1) 65%,rgba(229,179,0,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+/*the index-specific orange background was moved to the index page itself*/
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     color: #E8F1F2;
@@ -325,10 +322,11 @@ body {
 
 .display-form {
     max-width: 250px;
+    max-height: 480px;
     min-height: 480px;
     border-radius: 18px;
-    background-color: #781611;
-    border: 3px solid #781611;
+    background-color: lightgray;
+    border: 3px solid lightgray;
     /* position: relative;the following 3 lines for some unknown reason center everyhting PERFECTLY!
   left: 50%;
   transform: translateX(-50%);*/
@@ -416,23 +414,26 @@ body {
 }
 
 .descriptionP {
-    color: #d9edf7;
+    color: white;
     font-size: 17px;
     font-weight: bold;
+}
+
+label {
+  display: block;
 }
 
 .stylingDisplayP {
     color: black;
     font-size: small;
     min-height: 18px;
-    color: #F4F1ED;
 }
 
 #insideScrollingTextDisplay {
     height: 55px;
     overflow-y: scroll;
     position: inherit;
-    height: 100px;
+    /*height: 100px;*/
     min-width: 150px;
 }
 
@@ -857,14 +858,6 @@ p#noResultsFound {
     font-size: 30px;
 }
 
-p#help {
-    cursor: pointer;
-    background-color: #F4F1ED;
-    display: table;
-    border-radius: 3px;
-    color: #781611;
-    padding: 2px;
-}
 
 footer {
     background-color: #13181b;
